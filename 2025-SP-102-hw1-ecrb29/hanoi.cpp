@@ -1,7 +1,12 @@
+/*
+Evan Richard
+CS-2500
+3/30/25
+*/
+
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <algorithm>
 #include <vector>
 using namespace std;
 
