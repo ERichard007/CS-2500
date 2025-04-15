@@ -1,0 +1,12 @@
+21
+fibo(0) : 13
+fibo(1) : 21
+fibo(2) : 13
+fibo(3) : 8
+fibo(4) : 5
+fibo(5) : 3
+fibo(6) : 2
+fibo(7) : 1
+fibo(8) : 1
+1
+56

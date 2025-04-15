@@ -1,0 +1,20 @@
+987
+fibo(0) : 610
+fibo(1) : 987
+fibo(2) : 610
+fibo(3) : 377
+fibo(4) : 233
+fibo(5) : 144
+fibo(6) : 89
+fibo(7) : 55
+fibo(8) : 34
+fibo(9) : 21
+fibo(10) : 13
+fibo(11) : 8
+fibo(12) : 5
+fibo(13) : 3
+fibo(14) : 2
+fibo(15) : 1
+fibo(16) : 1
+1
+120
