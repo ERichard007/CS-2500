@@ -1,31 +1,53 @@
 days, minSegSize, maxSegSize = map(int, input().split())
-prefixSum = []
-dailyProfits = []
-
-print(days)
+prefixSum = [0] * (days+1)
+dailyProfits = [0] * (days)
 
 sum = 0
 for i in range(days):
     num = int(input())
     sum += num
-    prefixSum.append(sum)
-    dailyProfits.append(num)
-
-print(prefixSum)
-print(dailyProfits)
-
+    prefixSum[i+1] = sum
+    dailyProfits[i] = num
 
 minProfitSegs, maxProfitSegs = float("inf"), float("-inf")
-for segSize in range(minSegSize, maxSegSize):
-    for offset in range(0, segSize-1):
+for segSize in range(minSegSize, maxSegSize + 1):
+    for offset in range(segSize):
         start = offset
         profitCount = 0
-        while (start < days-1):
-            end = min(days-1, (start+segSize)-1)
+
+        #print(f"TESTING: SegSize: {segSize} start: {start}") TESTING
+        if(offset > 0):
+            end = offset
+            segSum = prefixSum[end]
+
+            '''
+            ###FOR TESTING###
+            print('< ', end="")
+            for num in range(end):
+                print(f'{dailyProfits[num]}, ', end="")
+            print('>')
+            '''
+
+            if (segSum > 0):
+                profitCount += 1
+
+        while (start < days):
+            end = min(days, start+segSize)
             segSum = prefixSum[end] - prefixSum[start]
+
+            '''
+            ###FOR TESTING###
+            print('< ', end="")
+            for num in range(start, end):
+                print(f'{dailyProfits[num]}, ', end="")
+            print('>') 
+            '''
+            
             if (segSum > 0):
                 profitCount += 1
             start += segSize
+
+        #print(f'PROFIT: {profitCount}') TESTING
         minProfitSegs = min(minProfitSegs, profitCount)
         maxProfitSegs = max(maxProfitSegs, profitCount)
 
