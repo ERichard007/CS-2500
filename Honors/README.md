@@ -6,7 +6,7 @@ Version 25.04.16
 Due Date:  Friday, May 16th, 11:59.59pm
 Description:
 Open an account on the kattis problem archive:
-[https://open.kattis.com/] 
+https://open.kattis.com/
 
 
 Select 10 of the attached listed problems and write a report about the solutions for your selected problems. 
@@ -32,7 +32,7 @@ Submit your report by email as an attached typed PDF document.
 	
 
 Problem List:
-[https://open.kattis.com/problems]
+https://open.kattis.com/problems
 
 Blueberry Waffle
 Fading Wind
