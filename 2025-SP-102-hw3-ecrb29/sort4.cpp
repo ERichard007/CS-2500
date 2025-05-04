@@ -129,7 +129,7 @@ int main(){
         myArray.push_back(num);
     }
 
-    printMyArray(myArray);
+    //printMyArray(myArray);
 
     BubbleSort(myArray);
     SelectionSort(myArray);
