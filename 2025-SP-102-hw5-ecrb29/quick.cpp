@@ -21,22 +21,22 @@ void PrintArray(vector<int> array){
 void FooBarCheck(vector<int>& array, const int index1, const int index2){
     long long product = static_cast<long long>(array[index1]) * static_cast<long long>(array[index2]);
 
-    cout << "PRODUCT OF " << array[index1] << " and " << array[index2] << ": " << product << " = ";
+    //cout << "PRODUCT OF " << array[index1] << " and " << array[index2] << ": " << product << " = ";
     
     if (product % 5 == 0){
         if (product % 7 == 0){
             foobar += 1;
-            cout << "FOOBAR" << endl;
+            //cout << "FOOBAR" << endl;
         }else{
             foo += 1;
-            cout << "FOO" << endl;
+            //out << "FOO" << endl;
         }
     }else if (product % 7 == 0)
     {
         bar += 1;
-        cout << "BAR" << endl;
+        //cout << "BAR" << endl;
     }else{
-        cout << "NEITHER" << endl;
+        //cout << "NEITHER" << endl;
     }
 }
 
@@ -57,24 +57,24 @@ int HoarePartition(vector<int>& array, int l, int r){
     do 
     {
         do{
-            cout << "moving from " << array[i] << " to " << array[i+1] << endl;
+            //cout << "moving from " << array[i] << " to " << array[i+1] << endl;
             i += 1;
         } while(i < r && array[i] < p);
 
-        cout << array[i] << " failed the first while loop." << endl;
+        //cout << array[i] << " failed the first while loop." << endl;
 
         do{
-            cout << "moving from " << array[j] << " to " << array[j-1] << endl;
+            //cout << "moving from " << array[j] << " to " << array[j-1] << endl;
             j -= 1;
         } while(array[j] > p);
 
-        cout << array[j] << " failed the second while loop!" << endl;
-        cout << "SWAPPING NOW!!!!!" << endl;
+        //cout << array[j] << " failed the second while loop!" << endl;
+        //cout << "SWAPPING NOW!!!!!" << endl;
         IntegerSwap(array, i, j);
         
     } while (j > i);
 
-    cout << "***ITERATION OF SWAPPING FINNISHED***" << endl;
+    //cout << "***ITERATION OF SWAPPING FINNISHED***" << endl;
 
     IntegerSwap(array, i, j);
     IntegerSwap(array, l, j);
@@ -103,6 +103,9 @@ int main(){
 
     QuickSort(myArray, 0, myArray.size()-1);
 
-    cout << "***\n" << swaps << "\n" << foo << "\n" << bar << "\n" << foobar << "\n***" << endl;
-    PrintArray(myArray);
+    cout << swaps << endl;
+    cout << foo << endl;
+    cout << bar << endl;
+    cout << foobar << endl;
+    //PrintArray(myArray);
 }
