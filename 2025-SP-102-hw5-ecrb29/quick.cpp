@@ -19,11 +19,6 @@ void PrintArray(vector<int> array){
 }
 
 void FooBarCheck(vector<int>& array, const int index1, const int index2){
-
-    if (index1 < 0 || index1 >= array.size() || index2 < 0 || index2 >= array.size()){
-        return;
-    }
-
     long long product = static_cast<long long>(array[index1]) * static_cast<long long>(array[index2]);
 
     cout << "PRODUCT OF " << array[index1] << " and " << array[index2] << ": " << product << " = ";
@@ -46,7 +41,7 @@ void FooBarCheck(vector<int>& array, const int index1, const int index2){
 }
 
 void IntegerSwap(vector<int>& array, const int index1, const int index2){
-    long long product = static_cast<long long>(array[index1]) * static_cast<long long>(array[index2]);
+    FooBarCheck(array, index1, index2);
     
     int temp = array[index1];
     array[index1] = array[index2];
@@ -62,22 +57,26 @@ int HoarePartition(vector<int>& array, int l, int r){
     do 
     {
         do{
+            cout << "moving from " << array[i] << " to " << array[i+1] << endl;
             i += 1;
-        } while(array[i] < p);
+        } while(i < r && array[i] < p);
+
+        cout << array[i] << " failed the first while loop." << endl;
 
         do{
+            cout << "moving from " << array[j] << " to " << array[j-1] << endl;
             j -= 1;
         } while(array[j] > p);
-    
-        FooBarCheck(array, i, j);
+
+        cout << array[j] << " failed the second while loop!" << endl;
+        cout << "SWAPPING NOW!!!!!" << endl;
         IntegerSwap(array, i, j);
         
     } while (j > i);
 
-    FooBarCheck(array, i, j);
-    IntegerSwap(array, i, j);
+    cout << "***ITERATION OF SWAPPING FINNISHED***" << endl;
 
-    FooBarCheck(array, l, j);
+    IntegerSwap(array, i, j);
     IntegerSwap(array, l, j);
     
     return j;
