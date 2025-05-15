@@ -19,35 +19,31 @@ void PrintArray(vector<int> array){
 }
 
 void FooBarCheck(vector<int>& array, const int index1, const int index2){
-
-    if (index1 < 0 || index1 >= array.size() || index2 < 0 || index2 >= array.size()){
-        return;
-    }
-
     long long product = static_cast<long long>(array[index1]) * static_cast<long long>(array[index2]);
 
     cout << "PRODUCT OF " << array[index1] << " and " << array[index2] << ": " << product << " = ";
     
-    if (product % 5 == 0){
-        if (product % 7 == 0){
-            foobar += 1;
-            cout << "FOOBAR" << endl;
-        }else{
-            foo += 1;
-            cout << "FOO" << endl;
-        }
-    }else if (product % 7 == 0)
+    if(product != 0)
     {
-        bar += 1;
-        cout << "BAR" << endl;
-    }else{
-        cout << "NEITHER" << endl;
+        if (product % 5 == 0){
+            if (product % 7 == 0){
+                foobar += 1;
+                cout << "FOOBAR" << endl;
+            }else{
+                foo += 1;
+                cout << "FOO" << endl;
+            }
+        }else if (product % 7 == 0)
+        {
+            bar += 1;
+            cout << "BAR" << endl;
+        }else{
+            cout << "NEITHER" << endl;
+        }
     }
 }
 
-void IntegerSwap(vector<int>& array, const int index1, const int index2){
-    long long product = static_cast<long long>(array[index1]) * static_cast<long long>(array[index2]);
-    
+void IntegerSwap(vector<int>& array, const int index1, const int index2){    
     int temp = array[index1];
     array[index1] = array[index2];
     array[index2] = temp;
@@ -63,7 +59,7 @@ int HoarePartition(vector<int>& array, int l, int r){
     {
         do{
             i += 1;
-        } while(array[i] < p);
+        } while(array[i] < p && i < array.size()-1);
 
         do{
             j -= 1;
@@ -105,5 +101,5 @@ int main(){
     QuickSort(myArray, 0, myArray.size()-1);
 
     cout << "***\n" << swaps << "\n" << foo << "\n" << bar << "\n" << foobar << "\n***" << endl;
-    PrintArray(myArray);
+    //PrintArray(myArray);
 }
