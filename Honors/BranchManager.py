@@ -28,7 +28,6 @@ def dfs(node):
     for child in adjacency_list[node]:
         dfs(child)
     exit_time[node] = time
-
 dfs(0)
 
 max_entry_seen = -1
