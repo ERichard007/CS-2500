@@ -88,9 +88,9 @@ for dots in reachablesDots.values():
 
 selectedEntrances = []
 dotsCovered = set()
-heap = []
+heap = [] 
 for entrance in reachablesDots:
-    heapq.heappush(heap, (-len(reachablesDots[entrance]), entrance))
+    heapq.heappush(heap (-len(reachablesDots[entrance]), entrance))
 
 while dotsCovered != allDots and heap:
     _, bestEntrance = heapq.heappop(heap)
