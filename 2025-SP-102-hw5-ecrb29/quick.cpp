@@ -23,29 +23,6 @@ void FooBarCheck(vector<int>& array, const int index1, const int index2){
 
     //cout << "PRODUCT OF " << array[index1] << " and " << array[index2] << ": " << product << " = ";
     
-<<<<<<< HEAD
-    if(product != 0)
-    {
-        if (product % 5 == 0){
-            if (product % 7 == 0){
-                foobar += 1;
-                cout << "FOOBAR" << endl;
-            }else{
-                foo += 1;
-                cout << "FOO" << endl;
-            }
-        }else if (product % 7 == 0)
-        {
-            bar += 1;
-            cout << "BAR" << endl;
-        }else{
-            cout << "NEITHER" << endl;
-        }
-    }
-}
-
-void IntegerSwap(vector<int>& array, const int index1, const int index2){    
-=======
     if (product % 5 == 0){
         if (product % 7 == 0){
             foobar += 1;
@@ -66,7 +43,6 @@ void IntegerSwap(vector<int>& array, const int index1, const int index2){
 void IntegerSwap(vector<int>& array, const int index1, const int index2){
     FooBarCheck(array, index1, index2);
     
->>>>>>> 29e58f48a2622c09b7863a7ed903e40fe5d1423e
     int temp = array[index1];
     array[index1] = array[index2];
     array[index2] = temp;
@@ -83,12 +59,9 @@ int HoarePartition(vector<int>& array, int l, int r){
         do{
             //cout << "moving from " << array[i] << " to " << array[i+1] << endl;
             i += 1;
-<<<<<<< HEAD
-        } while(array[i] < p && i < array.size()-1);
         } while(i < r && array[i] < p);
 
         //cout << array[i] << " failed the first while loop." << endl;
->>>>>>> 29e58f48a2622c09b7863a7ed903e40fe5d1423e
 
         do{
             //cout << "moving from " << array[j] << " to " << array[j-1] << endl;
@@ -130,12 +103,9 @@ int main(){
 
     QuickSort(myArray, 0, myArray.size()-1);
 
-    cout << "***\n" << swaps << "\n" << foo << "\n" << bar << "\n" << foobar << "\n***" << endl;
-=======
     cout << swaps << endl;
     cout << foo << endl;
     cout << bar << endl;
     cout << foobar << endl;
->>>>>>> 29e58f48a2622c09b7863a7ed903e40fe5d1423e
     //PrintArray(myArray);
 }
