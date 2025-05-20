@@ -85,7 +85,6 @@ int HoarePartition(vector<int>& array, int l, int r){
             i += 1;
 <<<<<<< HEAD
         } while(array[i] < p && i < array.size()-1);
-=======
         } while(i < r && array[i] < p);
 
         //cout << array[i] << " failed the first while loop." << endl;
@@ -131,7 +130,6 @@ int main(){
 
     QuickSort(myArray, 0, myArray.size()-1);
 
-<<<<<<< HEAD
     cout << "***\n" << swaps << "\n" << foo << "\n" << bar << "\n" << foobar << "\n***" << endl;
 =======
     cout << swaps << endl;
